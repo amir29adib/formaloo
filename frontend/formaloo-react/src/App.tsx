@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useForm } from 'react-hook-form';
 
-function App() {
+export default function App() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+  console.log(errors);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="email" placeholder="email" {...register("email", {required: true})} />
+      <input type="text" placeholder="Username" {...register("Username", {required: true, max: 16, min: 6})} />
+      <input type="checkbox" placeholder="Checkbox" {...register("Checkbox", {required: true, min: 1})} />
+      <input type="checkbox" placeholder="checkbox" {...register} />
+
+      <input {...register("radio", { required: true })} type="radio" value="option 1" />
+      <input {...register("radio", { required: true })} type="radio" value=" option 2" />
+      <input {...register("radio", { required: true })} type="radio" value=" option 3" />
+      <input {...register("radio", { required: true })} type="radio" value=" option 4" />
+
+      <input type="submit" />
+    </form>
   );
 }
-
-export default App;
