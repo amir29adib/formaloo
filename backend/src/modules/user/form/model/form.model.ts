@@ -1,7 +1,11 @@
+import { FormId } from "./form-id";
+
 export type FormStatus = "Published" | "Hidden";
 
+export type FormTag = "Select" | "Input" | "Radio" | "Checkbox";
+
 export interface FormFields {
-  tag: string;
+  tag: FormTag;
   attributes: object[];
   validation: object;
   values: string[];
@@ -9,9 +13,21 @@ export interface FormFields {
 }
 
 export interface Form {
-  id: string;
+  id: FormId;
   userId: string;
   link: string;
+  fields: FormFields;
+  status: FormStatus;
+}
+
+export interface CreateForm {
+  userId: string;
+  link: string;
+  fields: FormFields;
+  status: FormStatus;
+}
+
+export interface UpdateForm {
   fields: FormFields;
   status: FormStatus;
 }
