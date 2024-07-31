@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+#root {
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.myForm {
+  margin: 40px auto;
+  padding: 10px;
+  max-width: 300px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 5px;
+
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 60%;
+  margin-bottom: 20px;
+  border: 1px solid rgb(203, 203, 203);
+  border-radius: 5px;
+}
+
+nav a {
+  color: black;
+  padding: 2px 5px;
+}
+
+nav a.active {
+  background: #282c34;
+  color: white;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 10px;
+}
+
