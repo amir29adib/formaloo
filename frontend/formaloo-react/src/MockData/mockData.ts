@@ -49,5 +49,26 @@ export const mockData = [
         id:'transport4',
         value: 'Boat',
         label:'Boat'
+    },
+    {
+        type: 'radio',
+        name:'color',
+        id:'color1',
+        value: 'green',
+        placeholder:''
+    },
+    {
+        type: 'radio',
+        name:'color',
+        id:'color2',
+        value: 'yellow',
+        placeholder:''
+    },
+    {
+        type: 'radio',
+        name:'color',
+        id:'color3',
+        value: 'pink',
+        placeholder:''
     }
 ];
