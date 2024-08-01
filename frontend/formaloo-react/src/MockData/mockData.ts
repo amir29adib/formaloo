@@ -19,7 +19,8 @@ export const mockData = [
         type: 'password',
         placeholder: 'please enter your password',
         value: 'a1b2c3',
-        name:'password'
+        name:'password',
+        label:'password'
 
     },
     {

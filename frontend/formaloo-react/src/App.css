@@ -75,7 +75,7 @@ button {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],[type="password"] {
   width: 60%;
   margin-bottom: 20px;
   border: 1px solid rgb(203, 203, 203);
