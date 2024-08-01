@@ -1,19 +1,26 @@
 export const mockData = [
     {
-        type: 'text',
+        type: 'email',
         placeholder: 'enter your email',
         value: 'arefe.ehyaee@gmail.com',
-        label: 'Email'
+        name: 'Email',
+        label:'Email'
+
     },
     {
         type: 'text',
         placeholder: 'username',
-        value: 'arefe1234'
+        value: 'arefe1234',
+        name:'Username',
+        label:'Username'
+        
     },
     {
-        type: 'text',
-        placeholder: 'password',
-        value: 'a1b2c3'
+        type: 'password',
+        placeholder: 'please enter your password',
+        value: 'a1b2c3',
+        name:'password'
+
     },
     {
         type: 'checkbox',
@@ -40,12 +47,7 @@ export const mockData = [
         type: 'checkbox',
         name:'transport4',
         id:'transport4',
-        value: 'boat',
+        value: 'Boat',
         placeholder:''
     }
 ];
-
-const inputProps = [
-
-    {}
-]

@@ -26,7 +26,7 @@ export default function FormInput() {
 
     const inputFields = mockData.map((inputField) => {
         return (
-            <label> {inputField.label}
+            <label> {inputField.name}
                 <input
                 type={inputField.type}
                 placeholder={inputField.placeholder}
