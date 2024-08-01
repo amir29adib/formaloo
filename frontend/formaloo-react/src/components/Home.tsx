@@ -1,6 +1,7 @@
 import React from "react";
 import FormInput from "./FormFields";
 import TextInput from "./TextInput";
+import CheckboxInput from "./CheckboxInput";
 import RadioInput from "./RadioInput";
 
 export default function Home() {
@@ -8,8 +9,8 @@ export default function Home() {
     <div>
       <h2>Home</h2>
 
-      {/* <FormInput></FormInput> */}
       <TextInput></TextInput>
+      <CheckboxInput/>
       <RadioInput></RadioInput>
     </div>
   );
