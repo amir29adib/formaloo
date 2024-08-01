@@ -20,7 +20,7 @@ export default function TextInput() {
   const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
-const textData = mockData.filter(obj => obj.type ==='text')
+const textData = mockData.filter(obj => obj.type ==='text' || obj.type ==='email' || obj.type ==='password')
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="dynamicInput">
