@@ -17,12 +17,31 @@ export const mockData = [
     },
     {
         type: 'checkbox',
-        name:'',
-        id:'',
-        value: '1',
+        name:'transport1',
+        id:'transport1',
+        value: 'Bike',
         placeholder:''
-
-
+    },
+    {
+        type: 'checkbox',
+        name:'transport2',
+        id:'transport2',
+        value: 'Buggy',
+        placeholder:''
+    },
+    {
+        type: 'checkbox',
+        name:'transport3',
+        id:'transport3',
+        value: 'Bus',
+        placeholder:''
+    },
+    {
+        type: 'checkbox',
+        name:'transport4',
+        id:'transport4',
+        value: 'boat',
+        placeholder:''
     }
 ];
 
