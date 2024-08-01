@@ -25,7 +25,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
   
-      <form className='myForm' onSubmit={handleSubmit(onSubmit)}>
+      {/* <form className='myForm' onSubmit={handleSubmit(onSubmit)}>
         <input type="email" placeholder="email" {...register("email", {required: true})} />
         <input type="text" placeholder="Username" {...register("Username", {required: true, max: 16, min: 6})} />
         <div>
@@ -39,7 +39,7 @@ export default function App() {
 
 
         <input type="submit" />
-      </form>
+      </form> */}
 
     </div>
   );

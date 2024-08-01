@@ -27,27 +27,27 @@ export const mockData = [
         name:'transport1',
         id:'transport1',
         value: 'Bike',
-        placeholder:''
+        label:'Bike'
     },
     {
         type: 'checkbox',
         name:'transport2',
         id:'transport2',
         value: 'Buggy',
-        placeholder:''
+        label:'Buggy'
     },
     {
         type: 'checkbox',
         name:'transport3',
         id:'transport3',
         value: 'Bus',
-        placeholder:''
+        label:'Bus'
     },
     {
         type: 'checkbox',
         name:'transport4',
         id:'transport4',
         value: 'Boat',
-        placeholder:''
+        label:'Boat'
     }
 ];
