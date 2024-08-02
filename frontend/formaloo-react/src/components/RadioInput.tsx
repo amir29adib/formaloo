@@ -1,57 +1,45 @@
-import { mockData } from "../MockData/mockData";
-import { useForm, FieldValues } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
+import { FieldProps } from './interfaces';
 
-// const schema = z.object({
-//   username: z.string().min(1, "username field cannot be empty"),
-//   email: z.string().email("Invalid email address"),
-// });
+interface RadioInputProps {
+  fields: FieldProps[];
+}
 
-export default function RadioInput() {
+const RadioInput: React.FC<RadioInputProps> = ({ fields }) => {
+  const { register, formState: { errors } } = useFormContext();
 
-    const radioFields = mockData.filter(item => item.type === 'radio');
-    const radioEnumValues = radioFields.map(option => option.value) as [string, ...string[]];
 
-    const schema = z.object({
-        radioOption: z.enum(radioEnumValues, {
-        required_error: "This field is required"
-        }),
-    });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(schema),
-  });
-
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
-  };
+  const groupedFields = fields.reduce((acc, field) => {
+    if (!acc[field.name]) {
+      acc[field.name] = [];
+    }
+    acc[field.name].push(field);
+    return acc;
+  }, {} as { [key: string]: FieldProps[] });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="radioField">
-        <form onSubmit={handleSubmit(onSubmit)}>
-            {radioFields.map((option) => (
-            <div key={option.id}>
-                <label htmlFor={option.id}>
-                    <input
-                    type={option.type}
-                    value={option.value}
-                    id={option.id}
-                    // {...register(option.value)}
-                    name={option.name}
-                    />
-                    {option.value}
-                </label>
-            </div>
-            ))}
-        </form>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div className="dynamicInput">
+      {Object.keys(groupedFields).map((groupName) => (
+        <fieldset key={groupName}>
+          <legend>{groupedFields[groupName][0].name}</legend>
+          {groupedFields[groupName].map((field) => (
+            <label key={field.id}>
+              <input
+                {...register(field.name)}
+                type="radio"
+                value={String(field.value)}
+              />
+              {field.label}
+            </label>
+          ))}
+          {errors[groupName] && (
+            <p>{String(errors[groupName]?.message)}</p>
+          )}
+        </fieldset>
+      ))}
+    </div>
   );
-}
+};
+
+export default RadioInput;

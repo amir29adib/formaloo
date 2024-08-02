@@ -2,23 +2,25 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { FieldProps } from './interfaces';
 
-interface CheckboxInputProps {
+interface DropdownInputProps {
   fields: FieldProps[];
 }
 
-const CheckboxInput: React.FC<CheckboxInputProps> = ({ fields }) => {
+const DropdownInput: React.FC<DropdownInputProps> = ({ fields }) => {
   const { register, formState: { errors } } = useFormContext();
 
   return (
     <div className="dynamicInput">
       {fields.map((field: FieldProps) => (
-        <label key={field.name}>
-          <input
-            {...register(field.name)}
-            type="checkbox"
-            defaultChecked={Boolean(field.value)}
-          />
+        <label key={field.id}>
           {field.label}
+          <select {...register(field.name)}>
+            {field.options?.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
           {errors[field.name] && (
             <p>{String(errors[field.name]?.message)}</p>
           )}
@@ -28,4 +30,4 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ fields }) => {
   );
 };
 
-export default CheckboxInput;
+export default DropdownInput;
