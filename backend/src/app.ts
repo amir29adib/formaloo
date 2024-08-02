@@ -1,7 +1,5 @@
 import { app } from "./api";
 import { AppDataSource } from "./data-source";
-import dotenv from "dotenv-flow";
-dotenv.config();
 const PORT = 3000;
 
 AppDataSource.initialize().then(() => {
