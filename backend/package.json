@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=Production ts-node src/app.ts",
-    "test": "NODE_ENV=Test jest --testMatch **/src/tests/**/*.spec.ts",
-    "test:e2e": "NODE_ENV=Test jest --testMatch **/src/e2e/**/*.spec.ts"
+    "start": "cross-env NODE_ENV=production ts-node src/app.ts",
+    "start:development": "cross-env NODE_ENV=development ts-node src/app.ts",
+    "test": "cross-env NODE_ENV=Test jest --testMatch **/src/tests/**/*.spec.ts",
+    "test:e2e": "cross-env NODE_ENV=Test jest --testMatch **/src/e2e/**/*.spec.ts"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,9 @@
     "uuid": "^10.0.0"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "mysql2": "^3.11.0",
     "zod": "^3.23.8"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
