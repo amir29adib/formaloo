@@ -7,9 +7,6 @@ import {
 
 @Entity()
 export abstract class AbstractEntity {
-  @PrimaryGeneratedColumn("uuid")
-  id!: string;
-
   @CreateDateColumn()
   createdAt!: Date;
 
