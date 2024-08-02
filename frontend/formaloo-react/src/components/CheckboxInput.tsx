@@ -16,7 +16,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ fields }) => {
           <input
             {...register(field.name)}
             type="checkbox"
-            defaultChecked={Boolean(field.value)}
+            defaultChecked={Boolean(field.boolean)}
           />
           {field.label}
           {errors[field.name] && (

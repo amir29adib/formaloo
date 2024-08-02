@@ -41,6 +41,7 @@ export const mockData: FieldProps[] = [
       id: 'transport1',
       value: 'Bike',
       label: 'Bike',
+      boolean:false,
       validation: {
         type: 'boolean',
       },
@@ -51,6 +52,7 @@ export const mockData: FieldProps[] = [
       id: 'transport2',
       value: 'Buggy',
       label: 'Buggy',
+      boolean:false,
       validation: {
         type: 'boolean',
       },
@@ -60,6 +62,7 @@ export const mockData: FieldProps[] = [
       name: 'transport3',
       id: 'transport3',
       value: 'Bus',
+      boolean:false,
       label: 'Bus',
       validation: {
         type: 'boolean',
@@ -69,6 +72,7 @@ export const mockData: FieldProps[] = [
       type: 'checkbox',
       name: 'transport4',
       id: 'transport4',
+      boolean:false,
       value: 'Boat',
       label: 'Boat',
       validation: {

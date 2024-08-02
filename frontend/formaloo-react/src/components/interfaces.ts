@@ -39,8 +39,9 @@ interface DropdownInputProps {
 export interface FieldProps {
   type: string;
   placeholder?: string;
-  value?: string | boolean;
+  value?: string ;
   name: string;
+  boolean?:boolean,
   label?: string;
   id?: string;
   options?: string[];
