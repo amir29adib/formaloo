@@ -90,3 +90,7 @@ input[type="email"],[type="password"] {
   font-size: 10px;
 }
 
+
+.dynamicInput{
+  margin-top: 20px;
+}

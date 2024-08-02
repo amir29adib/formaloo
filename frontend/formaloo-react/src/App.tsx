@@ -1,9 +1,12 @@
 import React from 'react';
 import { useForm, type FieldValues } from 'react-hook-form';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import Home from './components/Home';
+import Form from './components/Form';
 import Dashboard from './components/Dashboard';
 import './App.css';
+import Login from './components/login';
+
+
 
 export default function App() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,14 +17,14 @@ export default function App() {
     <div>
       <BrowserRouter>
         <nav>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/dashboard'>Dashboard</NavLink>
+          <NavLink to='/'>Form</NavLink>
+          <NavLink to='/login'>Login</NavLink>
 
         </nav>
 
         <Routes>
-          <Route  path="/" element={<Home />} />
-          <Route  path="/dashboard" element={<Dashboard />} />
+          <Route  path="/" element={<Form />} />
+          <Route  path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
   

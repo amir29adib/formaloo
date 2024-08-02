@@ -5,7 +5,7 @@ import { z } from 'zod';
 import {zodResolver} from "@hookform/resolvers/zod";
 import { resolve } from 'path';
 
-export default function Dashboard() {
+export default function Login() {
   const SignUpSchema = z.object({
     username: z.string().min(3, "username must be at least 3 characters"),
     email: z.string().email()
@@ -29,16 +29,10 @@ export default function Dashboard() {
 
   return (
     <div>
-        <h2>Usres</h2>
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-            assumenda rerum accusamus nam impedit nisi ipsam id sapiente? Nam ad
-            fugit consectetur sapiente nobis officiis sit in, nostrum ea quia!
-        </div>
 
         <div className='myForm'>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h3>Let's check with Zod</h3>
+            <h2>Login</h2>
 
             <input type="text" placeholder="Username" {...register("username")} />
 

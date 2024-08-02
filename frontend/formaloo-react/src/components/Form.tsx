@@ -1,10 +1,10 @@
 import React from "react";
 import FormMaker from "./FormMaker";
 
-export default function Home() {
+export default function Form() {
   return (
     <div>
-      <h2>Home</h2>
+      <h2>From</h2>
 
       <FormMaker/>
     </div>
