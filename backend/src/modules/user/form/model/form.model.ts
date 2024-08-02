@@ -1,13 +1,14 @@
 import { FormId } from "./form-id";
+import { ValidationField } from "./form-validation";
 
 export type FormStatus = "Published" | "Hidden";
 
-export type FormTag = "Select" | "Input" | "Radio" | "Checkbox";
+export type FormTag = "Dropdown" | "Text" | "Radio" | "Checkbox";
 
 export interface FormFields {
   tag: FormTag;
   attributes: object[];
-  validation: object;
+  validation: ValidationField;
   values: string[];
   order: number;
 }
