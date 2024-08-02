@@ -27,7 +27,7 @@ export class FormEntity extends AbstractEntity {
   link!: string;
 
   @Column("json")
-  fields!: FormFields;
+  fields!: FormFields[];
 
   @Column()
   status!: FormStatus;
