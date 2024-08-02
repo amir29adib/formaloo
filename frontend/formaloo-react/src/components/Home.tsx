@@ -3,6 +3,7 @@ import FormInput from "./FormFields";
 import TextInput from "./TextInput";
 import CheckboxInput from "./CheckboxInput";
 import RadioInput from "./RadioInput";
+import DropDown from "./DropDown";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TextInput></TextInput>
       <CheckboxInput/>
       <RadioInput></RadioInput>
+      <DropDown></DropDown>
     </div>
   );
 }

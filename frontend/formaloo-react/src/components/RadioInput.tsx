@@ -42,7 +42,7 @@ export default function RadioInput() {
                     type={option.type}
                     value={option.value}
                     id={option.id}
-                    {...register(option.value)}
+                    // {...register(option.value)}
                     name={option.name}
                     />
                     {option.value}
