@@ -1,14 +1,14 @@
 import { v4 } from "uuid";
 import { FormId } from "./model/form-id";
 import { CreateForm, Form, UpdateForm } from "./model/form.model";
-import { DataSource, Repository } from "typeorm";
+import { DataSource, DeleteResult, Repository, UpdateResult } from "typeorm";
 import { FormEntity } from "./entity/form.entity";
 
 export interface IFormRepository {
-  create(form: CreateForm): boolean;
-  update(form: UpdateForm): Form;
-  findById(formId: FormId): Form | undefined;
-  delete(formId: FormId): boolean;
+  create(form: CreateForm): Promise<Form>;
+  update(id: FormId, form: UpdateForm): Promise<UpdateResult>;
+  findById(id: FormId): Promise<Form | null>;
+  delete(id: FormId): Promise<DeleteResult>;
 }
 
 export class FormRepository implements IFormRepository {
@@ -18,40 +18,22 @@ export class FormRepository implements IFormRepository {
     this.formRepo = appDataSource.getRepository(FormEntity);
   }
 
-    public create(form: CreateForm) {
-        return false;
-    // return this.formRepo.save(form);
+  async create(form: CreateForm) {
+    return await this.formRepo.save(form);
   }
 
-  update(form: UpdateForm): Form {
-    const formUpdated: Form = {
-      id: v4() as FormId,
-      userId: "",
-      link: "",
+  async update(id: FormId, form: UpdateForm): Promise<UpdateResult> {
+    return await this.formRepo.update(id, {
       fields: form.fields,
       status: form.status,
-    };
-    return formUpdated;
+    });
   }
 
-  findById(formId: FormId): Form | undefined {
-    const formFounded: Form = {
-      id: formId,
-      userId: "",
-      link: "",
-      fields: {
-        tag: "Select",
-        attributes: [{}],
-        validation: {},
-        values: [],
-        order: 1,
-      },
-      status: "Hidden",
-    };
-    return formFounded;
+  async findById(id: FormId): Promise<Form | null> {
+    return this.formRepo.findOne({ where: { id } });
   }
 
-  delete(formId: FormId): boolean {
-    return true;
+  async delete(id: FormId): Promise<DeleteResult> {
+    return await this.formRepo.delete({ id });
   }
 }

@@ -3,11 +3,12 @@ import { AbstractEntity } from "../../../abstract/entity/abstract.entity";
 import { FormFields, FormStatus } from "../model/form.model";
 import { SubmissionEntity } from "../submission/entity/submission.entity";
 import { UserEntity } from "../../entity/user.entity";
+import { FormId } from "../model/form-id";
 
 @Entity("forms")
 export class FormEntity extends AbstractEntity {
   @PrimaryGeneratedColumn("uuid")
-  id!: string;
+  id!: FormId;
 
   @Column()
   userId!: string;
